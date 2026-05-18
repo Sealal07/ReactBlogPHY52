@@ -22,7 +22,7 @@ function BlogLayout() {
                 <Outlet />
             </main>
             <footer>
-                <p>&copy; 2026 Все права защищены</p>
+                <p>&copy; 2026 Все права защищены. React Router Dom</p>
             </footer>
         </>
     )
