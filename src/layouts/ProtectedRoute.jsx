@@ -4,12 +4,12 @@ import { useAuth } from '../context/AuthContext';
 function ProtectedRoute({ children }){
 
     const location= useLocation(); //записываем, откуда пришел пользователь
-    const currentUser = useAuth();
-
+    const  { currentUser }   = useAuth();
+    console.log(currentUser);
     // ЕСЛИ НЕ АВТОРИЗОВАН
     if(!currentUser){
         // state-сохраняет текущий адрес,чтобы после логина вернуть юзера назад
-        return <Navigate to='/login' state={{ from: location}} replace />
+        return <Navigate to='/login' state={{ from: location }} replace />
     }    
     // ЕСЛИ АВТОРИЗОВАН возвращаем дочерний компонент (dashboard)
     return children;
