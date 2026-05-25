@@ -1,23 +1,44 @@
 import { Link } from "react-router-dom";
+import { useState, useEffect } from 'react';
 
 const ARTICLES_DATA = [
     {
      id: 'future-of-js', 
      title: 'Статья 1',
-     description: 'Описанние статьи 1'   
+     description: 'Описанние статьи 1', 
+     authorId: 'system',
+     authorName: 'Редакция'   
     },
     {
      id: 'css-modules', 
      title: 'Статья 2',
-     description: 'Описанние статьи 2'   
+     description: 'Описанние статьи 2',
+     authorId: 'system',
+     authorName: 'Редакция'    
     },
     {
      id: 'react-router-v6', 
      title: 'Статья 3',
-     description: 'Описанние статьи 3'   
+     description: 'Описанние статьи 3',
+     authorId: 'system',
+     authorName: 'Редакция'    
     }
 ]
 function NewsFeed(){
+    const [articles, setArticles] = useState([]);
+
+    useEffect(()=>{
+        const savedArticles = localStorage.getItem('blog_articles');
+        if (savedArticles){
+            setArticles(JSON.parse(savedArticles));
+        }else {
+            localStorage.setItem('blog_articles', 
+                JSON.stringify(ARTICLES_DATA));
+        }
+    }, []);
+
+
+
     return (
         <>
             <h1>Лента свежих новостей</h1>
