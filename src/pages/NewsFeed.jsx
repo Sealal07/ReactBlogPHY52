@@ -3,6 +3,7 @@ import { Link, useSearchParams } from "react-router-dom";
 // http:localhost/news?search=react&category=frontend
 
 
+
 const ARTICLES_DATA = [
     {
      id: 'future-of-js', 
@@ -19,7 +20,6 @@ const ARTICLES_DATA = [
      category: 'css',  
      authorId: 'system',
      authorName: 'Редакция'    
-      
     },
     {
      id: 'react-router-v6', 
