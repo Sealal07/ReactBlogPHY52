@@ -2,7 +2,7 @@
     text-decoration: none;
     color: #ccc;
 }
-.nav-link .active{
+.nav-link.active{
     color: red;
     font-weight: bold;
 }
